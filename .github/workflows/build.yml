@@ -40,12 +40,12 @@ jobs:
 
       - name: Install frontend dependencies
         run: |
-          cd ./homepage
+          cd homepage
           npm install
 
       - name: Build frontend
         run: |
-          cd ./homepage
+          cd homepage
           npm run build
 
       - name: Show repo root contents
