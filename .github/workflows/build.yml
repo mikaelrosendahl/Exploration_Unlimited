@@ -23,13 +23,13 @@ jobs:
           dotnet-version: 8.0.x
 
       - name: Restore backend dependencies
-        run: dotnet restore ./ExplorationApi.csproj
+        run: dotnet restore ExplorationApi/ExplorationApi.csproj
 
       - name: Build backend
-        run: dotnet build ./ExplorationApi.csproj --no-restore --configuration Release
+        run: dotnet build ExplorationApi/ExplorationApi.csproj --no-restore --configuration Release
 
       - name: Run backend tests
-        run: dotnet test u ./ExplorationApi.csproj --no-build --configuration Release
+        run: dotnet test u ExplorationApi/ExplorationApi.csproj --no-build --configuration Release
       
       - name: Show ExplorationApi contents
         run: ls -la ExplorationApi
