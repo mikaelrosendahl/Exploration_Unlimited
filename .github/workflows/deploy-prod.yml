@@ -1,0 +1,21 @@
+name: Deploy to Production
+
+on:
+  workflow_dispatch:
+  push:
+    branches : [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master branch
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Deploy Production API
+        run: curl https://api.render.com/deploy/srv-d1226715pdvs73c92eg0?key=jXssNbzvTpM
+      
+      - name: Deploy Production Client
+        run: curl https://api.render.com/deploy/srv-d12s8ibipnbc73bbbr3g?key=PklgY2sj1o0

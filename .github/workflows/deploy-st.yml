@@ -1,0 +1,22 @@
+name: Deploy to Staging
+
+on:
+  workflow_dispatch:
+  push:
+    branches : [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout master branch
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Deploy Staging API
+        run: curl https://api.render.com/deploy/srv-d1bbptuuk2gs739jjls0?key=tKJ8LIgkIOc
+
+      - name: Deploy Staging Client
+        run: curl https://api.render.com/deploy/srv-d1balvidbo4c73cbeei0?key=Jfb_EgsLccg

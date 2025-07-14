@@ -1,0 +1,47 @@
+name: Build & Test (Fullstack)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # --- Backend (.NET) ---
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore backend dependencies
+        run: dotnet restore
+
+      - name: Build backend
+        run: dotnet build --no-restore --configuration Release
+
+      - name: Run backend tests
+        run: dotnet test --no-build --configuration Release
+
+      # --- Frontend (Angular) ---
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install frontend dependencies
+        run: |
+          cd ./Homepage  
+          npm install
+
+      - name: Build frontend
+        run: |
+          cd ./Homepage  
+          npm run build
+
+

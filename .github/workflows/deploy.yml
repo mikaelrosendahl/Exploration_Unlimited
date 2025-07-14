@@ -1,0 +1,16 @@
+name: Deploy to Development
+
+on:
+  workflow_dispatch:
+  push:
+    branches : [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Development API
+        run: curl https://api.render.com/deploy/srv-d1951hbuibrs73bqubbg?key=-iyywq1G7uA
+      
+      - name: Deploy Development Client
+        run: curl https://api.render.com/deploy/srv-d19blunfte5s73c8i7ig?key=3vVrNmrS2c0
