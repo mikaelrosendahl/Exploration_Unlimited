@@ -1,10 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.github",
-    "\\.github\\workflows",
-    "\\ExplorationApi"
+    "\\ExplorationApi",
+    "\\ExplorationApi\\Controllers",
+    "\\homepage",
+    "\\homepage\\.angular",
+    "\\homepage\\assets",
+    "\\homepage\\bin",
+    "\\homepage\\dist",
+    "\\homepage\\obj",
+    "\\homepage\\src"
   ],
-  "SelectedNode": "\\.github\\workflows\\build.yml",
   "PreviewInSolutionExplorer": false
 }
