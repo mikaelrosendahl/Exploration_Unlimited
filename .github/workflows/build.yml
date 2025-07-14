@@ -28,6 +28,9 @@ jobs:
 
       - name: Run backend tests
         run: dotnet test ./ExplorationApi/ExplorationApi.csproj --no-build --configuration Release
+      
+      - name: Show ExplorationApi contents
+        run: ls -la ExplorationApi
 
       # --- Frontend (Angular) ---
       - name: Setup Node.js
@@ -44,3 +47,6 @@ jobs:
         run: |
           cd ./homepage
           npm run build
+
+      - name: Show repo root contents
+        run: ls -la
