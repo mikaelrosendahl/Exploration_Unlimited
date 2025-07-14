@@ -1,0 +1,7 @@
+# Ignorera tmp och drive upload mappar
+/tmp/
+/drive upload/
+
+# Ignorera loggfiler
+*.log
+
