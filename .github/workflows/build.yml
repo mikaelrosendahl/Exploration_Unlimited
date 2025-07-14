@@ -50,5 +50,4 @@ jobs:
           cd homepage
           npm run build
 
-      - name: Show ExplorationApi contents
-        run: ls -la ExplorationApi
+      
