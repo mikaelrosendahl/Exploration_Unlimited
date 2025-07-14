@@ -50,5 +50,5 @@ jobs:
           cd homepage
           npm run build
 
-      - name: Show repo root contents
-        run: ls -la
+      - name: Show ExplorationApi contents
+        run: ls -la ExplorationApi
