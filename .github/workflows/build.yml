@@ -1,3 +1,4 @@
+
 name: Build & Test (Fullstack)
 
 on:
@@ -20,13 +21,13 @@ jobs:
           dotnet-version: 8.0.x
 
       - name: Restore backend dependencies
-        run: dotnet restore
+        run: dotnet restore ./ExplorationApi/ExplorationApi.csproj
 
       - name: Build backend
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build ./ExplorationApi/ExplorationApi.csproj --no-restore --configuration Release
 
       - name: Run backend tests
-        run: dotnet test --no-build --configuration Release
+        run: dotnet test ./ExplorationApi/ExplorationApi.csproj --no-build --configuration Release
 
       # --- Frontend (Angular) ---
       - name: Setup Node.js
@@ -36,12 +37,10 @@ jobs:
 
       - name: Install frontend dependencies
         run: |
-          cd ./Homepage  
+          cd ./homepage
           npm install
 
       - name: Build frontend
         run: |
-          cd ./Homepage  
+          cd ./homepage
           npm run build
-
-
