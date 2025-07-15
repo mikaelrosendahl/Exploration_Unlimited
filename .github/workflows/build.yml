@@ -16,17 +16,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          path: .
 
-      - name: Install and build frontend (homepage)
-        working-directory: homepage
-        run: |
-          npm ci
-          npm run build
+      
 
       - name: Set up .NET
         uses: actions/setup-dotnet@v4
