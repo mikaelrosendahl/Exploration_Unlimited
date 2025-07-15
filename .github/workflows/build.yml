@@ -23,7 +23,7 @@ jobs:
           node-version: '18'
 
       - name: Install and build frontend (homepage)
-        working-directory: homepage
+        working-directory: Exploration_Unlimited/homepage
         run: |
           npm ci
           npm run build
@@ -34,13 +34,13 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore backend dependencies
-        working-directory: ExplorationApi
+        working-directory: Exploration_Unlimited/ExplorationApi
         run: dotnet restore
 
       - name: Build backend
-        working-directory: ExplorationApi
+        working-directory: Exploration_Unlimited/ExplorationApi
         run: dotnet build --no-restore --configuration Release
 
       - name: Run backend tests (optional)
-        working-directory: ExplorationApi
+        working-directory: Exploration_Unlimited/ExplorationApi
         run: dotnet test --no-build --configuration Release
