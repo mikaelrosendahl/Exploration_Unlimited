@@ -19,8 +19,7 @@ jobs:
         with:
           path: .
 
-      
-
+      # Backend (.NET) setup och build
       - name: Set up .NET
         uses: actions/setup-dotnet@v4
         with:
@@ -37,3 +36,29 @@ jobs:
       - name: Run backend tests (optional)
         working-directory: ExplorationApi
         run: dotnet test --no-build --configuration Release
+
+      # Frontend (Angular) setup och build
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: 'homepage/package-lock.json'
+
+      - name: Install frontend dependencies
+        working-directory: homepage
+        run: npm ci
+
+      - name: Build frontend
+        working-directory: homepage
+        run: npm run build
+
+      - name: Run frontend tests (optional)
+        working-directory: homepage
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
+        continue-on-error: true
+
+      - name: Run frontend linting (optional)
+        working-directory: homepage
+        run: npm run lint
+        continue-on-error: true
