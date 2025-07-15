@@ -1,0 +1,93 @@
+{
+    "MENU": {
+        "HOME": "Home",
+        "ABOUT": "About",
+        "BLOG": "Blog",
+        "COURSES": "Courses",
+        "CONTACT": "Contact",
+        "LANGUAGE": "Select language",
+        "CREATE_USER": "Create User",
+        "LOGIN": "Login"
+    },
+
+    "HOME": {
+        "TEXTROW_1": "Embark on unforgettable ocean adventures with Exploration Unlimited.",
+		"TEXTROW_2": "Our mastery in scuba diving courses and dive gear maintenance, ",
+		"TEXTROW_3": "combined with a passion for quality products, exceptional services,", 
+		"TEXTROW_4": "and unmatched customer care, keeps our community returning again and again!"
+    },
+
+    "LEARN": {
+        "HEADER_1": "Learn to dive",
+        "HEADER_2": "Your ticket to the ocean world"
+    },
+
+    "COURSES": {
+        "FIND_A_COURSE": "Find your course",
+        "OUR_COURSES": "Featured Courses",
+        "INFO_TEXT_1": "Embark on unforgettable ocean adventures with Exploration Unlimited.",
+        "INFO_TEXT_2":  "Our mastery in scuba diving courses and dive gear maintenance, ",
+        "INFO_TEXT_3": "combined with a passion for quality products, exceptional services,", 
+        "INFO_TEXT_4": "and unmatched customer care, keeps our community returning again and again!",
+        "OPEN_WATER": "Open Water Diver",
+        "ADVANCED": "Advanced Open Water Diver",
+        "RESCUE": "Rescue Diver",
+        "OPENWATER_INFO": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "ADVANCED_INFO": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "RESCUE_INFO": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "SPECIALITY_DIVER": "Speciality Diver",
+        "MASTER_SCUBA_DIVER": "Master Scuba Diver",
+        "DIVEMASTER": "Divemaster",
+        "SPECIALITY_INFO": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "MASTER_INFO": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        "DIVEMASTER_INFO": "Some quick example text to build on the card title and make up the bulk of the card's content."
+    },
+
+    "EXPLORE": {
+        "TEXTROW_1": "Explore the hidden wonders of the seven seas, where a vibrant tapestry",
+        "TEXTROW_2": "of marine life awaits. Dive into the depths and uncover the mesmerizing ",
+        "TEXTROW_3": "beauty that lies beneath the waves. Embark on a journey of discovery,",
+        "TEXTROW_4": "as scuba divers, to witness the enchanting world of underwater marvels."
+    },
+
+    "BUTTON":{
+        "LOGIN": "Login",
+        "READ_MORE": "Read more",
+        "SUBMIT": "Submit",
+        "MORE": "More",
+        "SEE_ALL_COURSES": "See all courses",
+        "CREATE_USER":"Create User"
+    },
+
+    "FORM_LABEL": {
+        "EMAIL": "Email:",
+        "EMAIL_ADDRESS": "Email address:",
+        "EMAILHELP": "We'll never share your email with anyone else.",
+        "PASSWORD": "Password:",
+        "CONFIRM_PASSWORD": "Confirm password",
+        "SAVE_LOGIN": "Save login?",
+        "SUBMIT": "Submit",
+        "CREATE_USER": "Create User"
+    },
+
+    "ABOUT": {
+        "ABOUT_US": "about us",
+        "TEXTROW_1": "Explore the hidden wonders of the seven seas, where a vibrant tapestry",
+        "TEXTROW_2": "of marine life awaits. Dive into the depths and uncover the mesmerizing ",
+        "TEXTROW_3": "beauty that lies beneath the waves. Embark on a journey of discovery,",
+        "TEXTROW_4": "as scuba divers, to witness the enchanting world of underwater marvels.",
+        "TEXTROW_5": "beauty that lies beneath the waves. Embark on a journey of discovery,",
+        "TEXTROW_6": "beauty that lies beneath the waves. Embark on a journey of discovery,"
+    },
+
+    "CONTACT": {
+        "LOCATION": "LOCATION",
+        "ADDRESS": "Vaksala Lunda 61",
+        "ZIP": "754 73",
+        "CITY": "Uppsala",
+        "COUNTRY": "SWEDEN",
+        "FOLLOWUS": "FOLLOW US",
+        "PRIVACY_POLICY": "© 2023 Privacy policy",
+        "CONTACT_US": "contact us"
+    }
+}

@@ -1,0 +1,24 @@
+<div class="container p-4">
+  <form class="create-user-form" (ngSubmit)="onSubmit()">
+    <h1>Create User</h1>
+    <div class="form-group">
+      <label for="user">Username</label>
+      <input type="text" id="user" class="form-control" [(ngModel)]="user.username" placeholder="Enter your username">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" class="form-control" [(ngModel)]="user.email" name="email" placeholder="Enter your email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" class="form-control" [(ngModel)]="user.password" name="password"  placeholder="Enter your password">
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">ConfirmPassword</label>
+      <input type="confirmPassword" id="confirmPassword" class="form-control" [(ngModel)]="user.confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+    </div>
+    <div class="form-group flex-container">
+      <button class="brown-btn-custom" type="submit" aria-label="login">{{'BUTTON.CREATE_USER' | translate}}</button>
+    </div>
+  </form>
+</div>

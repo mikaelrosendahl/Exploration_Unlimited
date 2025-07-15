@@ -1,0 +1,28 @@
+@import "variables";
+
+.our-courses {
+
+    background-color: $primary;
+
+}
+
+.img {
+
+    height: 60vh;
+    width: 500px;
+    /* Set the height of the container, adjust as needed */
+    background-image: url('/assets/img/exploration-pictures/wreck-black-n-white.jpg');
+    /* Path to your image relative to the assets folder */
+    background-repeat: no-repeat;
+
+    /* Adjust as needed */
+    background-position: center center;
+}
+
+.image-container {
+    img {
+        max-width: 100%; // Set the maximum width to 100% of the container
+        height: auto; // Allow the height to adjust automatically based on the aspect ratio
+        display: block; // Ensure the image behaves as a block element within the container
+    }
+}

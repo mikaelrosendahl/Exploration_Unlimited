@@ -1,0 +1,10 @@
+<div class="diary-container">
+  <div *ngIf="diaryEntry" class="diary-entry">
+    <h2 class="diary-title">{{ diaryEntry.title }}</h2>
+    <p class="diary-date"><em>{{ diaryEntry.date | date: 'longDate' }}</em></p>
+    <div class="diary-content" [innerHTML]="diaryEntry.content"></div>
+  </div>
+  <!--<div *ngIf="!diaryEntry">
+    <p>Inlägget kunde inte hämtas eller existerar inte.</p>
+  </div>-->
+</div>

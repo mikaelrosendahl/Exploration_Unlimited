@@ -1,0 +1,89 @@
+@import 'variables';
+//Styling för det andra formuläret
+.loginform {
+  @extend .form-common; /* Återanvänd den gemensamma layouten */
+  background-color: #f8f9fa; /* Behåll bakgrundsfärgen */
+  
+  .label {
+    font-weight: bold;
+    color: #555;
+  }
+
+  .control {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 0!important;
+    border: 1px solid #ced4da;
+  }
+
+  .mb-3 {
+    margin-bottom: 15px;
+  }
+
+  .form-check-input {
+    margin-right: 8px;
+  }
+  input.control,
+  input.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0;
+  }
+  
+  .error-message {
+    color: #ff0000;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+.flex-container {
+        display: flex;
+        justify-content: center; /* Centrerar knappen horisontellt */
+      }
+
+      .brown-btn-custom{
+        text-transform: uppercase;
+        text-align: center;
+        border-style: none;
+        border: 2px solid $turtle-brown;
+        font-weight: 400;
+        padding: 8px 24px 8px 24px;
+        background-color: transparent; 
+         color: $turtle-brown; 
+         border-style: solid;
+         background-image: none;
+         font-size: 0.875rem;
+         letter-spacing: 4px;
+         margin-top: 1.5rem;
+      }
+    
+      button.brown-btn-custom:hover {
+        background-color: $turtle-brown;
+        color: white;
+      }
+
+// Responsivitet (Mobile-First)
+@media (min-width: 768px) {
+  .form-common {
+    padding: 2.5rem;
+  }
+
+  .contact-form h2,
+  .loginform h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-form p,
+  .loginform p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-common {
+    max-width: 700px; /* Anpassa storleken för större skärmar */
+  }
+}

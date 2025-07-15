@@ -1,0 +1,43 @@
+.bg-color-prim {
+    background-color: $primary;
+}
+
+.bg-color-sec {
+    background-color: $secondary;
+}
+
+.bg-trans {
+    background-color: transparent;
+}
+
+.bg-color-white {
+    background-color: $white;
+}
+
+.bg-color-grey {
+    background-color: $grey;
+}
+
+.bg-color-blue-grey {
+    background-color: $blue-grey;
+}
+
+.bg-contact-us {
+    background-image: url('/assets/img/exploration-pictures/scubalady.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    border-radius: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  }
+
+  .bg-create-user {  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    border-radius: 0;
+    //box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }

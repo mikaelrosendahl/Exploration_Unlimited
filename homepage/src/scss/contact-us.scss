@@ -1,0 +1,109 @@
+@import 'variables';
+@import 'fonts';
+
+
+
+.bg-new-contact {
+    height: auto;
+    max-width: 1280px;
+    margin: 70px;
+
+    .info-container {
+        height: 450px;
+        background-color: $secondary;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .info-text {
+        text-align: left;
+        margin-left: 80px;
+        margin-bottom: 20px;
+        padding: 10px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+     
+        h1 {
+            font-family: "Oswald", sans-serif !important;
+            font-size: 24px;
+            font-weight: bold;
+            color: $ocean-turquoise;
+            margin-bottom: 30px;
+        
+        }
+
+        .paragraph-section {
+            p {
+                font-size: 16px;
+                color: $ocean-turquoise;
+                line-height: 1;
+                margin-bottom: 10px;
+            }
+            
+            .privacy-policy {
+                font-size: 18px;
+                color: $ocean-turquoise;
+                line-height: 1;
+                margin-top: 20px;
+            }
+        }
+
+    }
+
+    .contact {
+        height: 450px;
+        background-color: $ocean-turquoise;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-left: -4rem;
+        /* Negative margin to overlap by 0.5 column width */
+        position: relative;
+        /* Establish relative positioning for absolute positioning */
+        z-index: 1;
+        /* Adjust the z-index as needed */
+    }
+
+    .contact-us-form {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-right: 40px;
+        margin-left: 40px;
+        height: 300px;
+        width: 500px;
+
+        .form-control {
+            border-radius: 0;
+            padding: 5px;
+            width: 100%;
+            transition: border-color 0.2s ease-in-out;
+            font-size: 1rem; 
+            font-weight: 400;
+            background-color: $white;
+            height: 50px;
+
+            &:focus {
+                outline: none;
+                border-color: #007bff;
+                box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            }
+        }
+
+        .placeholder-text::placeholder {
+            color: $light-grey
+        }
+
+        .custom-textarea {
+            width: 100%;
+            height: 86px;
+        }
+    }
+
+    h2 {
+        font-family: "Oswald", sans-serif !important;
+        font-size: 3rem;
+        color: $turquoise-ultralight;
+    }
+}

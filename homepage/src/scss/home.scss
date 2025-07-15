@@ -1,0 +1,205 @@
+@import 'variables';
+
+
+/* Larger screens (1240px and up) */
+@media (min-width: 1240px) {
+
+   // Add your larger screen styles here
+   .bg-home {
+      height: 100vh;
+      max-width: 1280px;
+      margin: 70px;
+      background-image: url('/assets/img/exploration-pictures/hometurtle-fullHD-1920x1280.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+   }
+
+   .content-container {
+      height: 100vh; /*100vh or auto?*/
+      background-color: transparent;
+
+   }
+
+   .logo-container {
+      max-width: 100%;
+      /* Ensure the logo doesn't exceed its original size */
+      height: auto;
+      /* Allow the height to adjust proportionally */
+      display: block;
+      /* Make sure the logo behaves as a block element */
+      margin: 0 auto;
+
+   }
+
+   .text-home {
+      font: 1em sans-serif;
+      color: $secondary;
+      height: 3rem; /*100vh or auto?*/
+      width: 512px;
+      text-align: center;
+      background-color: transparent;
+      line-height: 1.4;
+      /* Set the desired line height for more spacing between text rows */
+      margin-bottom: 4rem;
+   }
+
+}
+
+/* Medium screens (768px to 1239px) */
+@media (max-width: 1239px) and (min-width: 768px) {
+
+   // Add your medium screen styles here
+   .bg-home {
+      height: 100vh;
+      max-width: 1280px; // Set your desired maximum width
+      margin: 70px;
+      padding: 20px, 0px, 20px, 20px; // Optional padding for better styling
+      /* Set the height of the container, adjust as needed */
+      background-image: url('/assets/img/exploration-pictures/hometurtle-fullHD-1920x1280.jpg');
+      /* Path to your image relative to the assets folder */
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* Adjust as needed */
+      background-position: center center;
+   }
+
+   .content-container {
+      height: 100vh;
+      background-color: transparent;
+
+   }
+
+   .logo-container {
+      max-width: 100%;
+      /* Ensure the logo doesn't exceed its original size */
+      height: auto;
+      /* Allow the height to adjust proportionally */
+      display: block;
+      /* Make sure the logo behaves as a block element */
+      margin: 0 auto;
+
+
+   }
+
+   .text-home {
+      font: 1em sans-serif;
+      color: $secondary;
+      height: 3rem; /*100vh?*/
+      width: 512px;
+      text-align: center;
+      background-color: transparent;
+      line-height: 1.4;
+      /* Set the desired line height for more spacing between text rows */
+      margin-bottom: 4rem;
+
+   }
+}
+
+/* Small screens (375px to 767px) */
+@media (max-width: 767px) and (min-width: 375px) {
+
+   // Add your small screen styles here
+   .bg-home {
+      height: 100vh;
+      max-width: 1280px; // Set your desired maximum width
+      margin: 0 auto; // Center the container horizontally
+      padding: 20px, 0px, 20px, 20px; // Optional padding for better styling
+      /* Set the height of the container, adjust as needed */
+      background-image: url('/assets/img/exploration-pictures/hometurtle-fullHD-1920x1280.jpg');
+      /* Path to your image relative to the assets folder */
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* Adjust as needed */
+      background-position: center center;
+   }
+
+   .content-container {
+      height: 100vh;
+      background-color: transparent;
+
+   }
+
+   .logo-container {
+      max-width: 100%;
+      /* Ensure the logo doesn't exceed its original size */
+      height: auto;
+      /* Allow the height to adjust proportionally */
+      display: block;
+      /* Make sure the logo behaves as a block element */
+      margin: 0 auto;
+
+
+   }
+
+   .text-home {
+      font: 1em sans-serif;
+      color: $secondary;
+      height: 3rem;
+      width: auto;
+      text-align: center;
+      background-color: transparent;
+      line-height: 1.4;
+      margin-left: 20px;
+      margin-bottom: 6rem;
+
+
+   }
+}
+
+/* Extra small screens (up to 374px) */
+@media (max-width: 374px) {
+
+   // Add your extra small screen styles here
+   .bg-home {
+      height: 100vh;
+      max-width: 1280px; // Set your desired maximum width
+      margin: 0 auto; // Center the container horizontally
+      padding: 20px, 0px, 20px, 20px; // Optional padding for better styling
+      /* Set the height of the container, adjust as needed */
+      background-image: url('/assets/img/exploration-pictures/hometurtle-fullHD-1920x1280.jpg');
+      /* Path to your image relative to the assets folder */
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* Adjust as needed */
+      background-position: center center;
+   }
+
+   .content-container {
+      height: 100vh;
+      background-color: transparent;
+
+   }
+
+   .logo-container {
+      max-width: 100%;
+      /* Ensure the logo doesn't exceed its original size */
+      height: auto;
+      /* Allow the height to adjust proportionally */
+      display: block;
+      /* Make sure the logo behaves as a block element */
+      margin: 0 auto;
+
+   }
+
+   .text-home {
+      font: 1em sans-serif;
+      color: $secondary;
+      height: 100%;
+      width: auto;
+      text-align: center;
+      background-color: transparent;
+      line-height: 1.4;
+      /* Set the desired line height for more spacing between text rows */
+      margin-bottom: 4rem;
+
+   }
+}
+
+/* Custom CSS for flexible hamburger menu */
+@media (max-width: 991.98px) {
+   .navbar-expand-lg .navbar-nav .nav-link {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+   }
+}

@@ -1,0 +1,46 @@
+@import "variables";
+
+
+@media (min-width: 1240px) {
+
+        .bg-footer {
+                height: auto;
+                max-width: 1280px;
+                margin: 70px;
+                background-color: $sky-blue;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+        }
+
+        .footer-content {
+                /* height: 30rem; */
+                /* background-color: transparent; */
+        }
+}
+
+ul, li {
+        list-style-type: none;
+}
+
+.link-style {
+
+        font-size: 16px;
+        line-height: 1;
+        font-size: large;
+        color: $secondary !important;
+
+        &:hover,
+        :active {
+                color: darken($color: $secondary, $amount: 20) !important;
+        }
+
+        &:focus {
+                text-decoration: underline;
+        }
+}
+
+.logo {
+        padding-top: 4rem;
+        padding-left: 1rem;
+}

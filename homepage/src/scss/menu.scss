@@ -1,0 +1,32 @@
+@import 'variables';
+
+nav {
+
+    .navbar {
+        background-color: transparent;
+       
+    }
+
+    .nav-link,
+    .navbar-toggler,
+    .nav-globe {
+
+        font-size: large;
+        color: $secondary !important;
+
+        &:hover,
+        :active {
+            color: darken($color: $secondary, $amount: 20) !important;
+        }
+
+        &:focus {
+            text-decoration: underline;
+        }
+    } 
+
+    .language-btn {
+        background-color: transparent;
+
+    }
+
+}

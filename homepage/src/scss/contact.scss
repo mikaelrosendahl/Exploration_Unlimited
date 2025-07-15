@@ -1,0 +1,70 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "variables";
+@import "backgrounds";
+
+// To do, use color variables where it applies
+
+
+// Styling for the form
+.contact-form {
+  background-color: rgba(235, 231, 217, 0.9);
+  padding: 2rem;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+
+  
+
+  p {
+    color: #777;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .form-floating {
+    margin-bottom: 1rem;
+
+    .form-control {
+      border-radius: 0;
+      border: 1px solid #ddd;
+      &:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      }
+    }
+
+    label {
+      color: #555;
+    }
+  }
+}
+
+// Responsivitet (Mobile-First)
+@media (min-width: 768px) {
+  .bg-contact-us {
+    padding: 3rem;
+  }
+
+  .contact-form {
+    padding: 2.5rem;
+    h2 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .bg-contact-us {
+    padding: 4rem;
+  }
+
+  .contact-form {
+    max-width: 700px;
+  }
+}
+

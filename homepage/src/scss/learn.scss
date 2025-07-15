@@ -1,0 +1,15 @@
+@import 'variables';
+
+.learn {
+
+    background-color: $primary;
+
+}
+
+.image-container {
+    img {
+        max-width: 100%; // Set the maximum width to 100% of the container
+        height: auto; // Allow the height to adjust automatically based on the aspect ratio
+        display: block; // Ensure the image behaves as a block element within the container
+    }
+}

@@ -1,0 +1,37 @@
+@import "variables";
+@import "fonts";
+
+.bg-about-us {
+  height: auto;
+  max-width: 1280px;
+  margin: 70px;
+  background-color: $secondary;
+
+  .photo {
+    height: 400px;
+    width: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/assets/img/exploration-pictures/zansibar-beach.jpg');
+    margin: 50px;
+  }
+
+  .container-inner {
+    margin-top: 8rem;
+
+    h1 {
+      font-family: "Oswald", sans-serif !important;
+      font-size: 2.5rem;
+      color: $turtle-brown;
+    }
+
+    .paragraph-section {
+      font-size: 16px;
+      color: $turtle-brown;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+  }
+
+}

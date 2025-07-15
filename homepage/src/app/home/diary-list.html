@@ -1,0 +1,21 @@
+<div class="diary-grid">
+  <div class="diary-card featured" *ngIf="diaryEntries.length" (click)="viewEntry(diaryEntries[0])">
+    <div class="card-image">
+    </div>
+
+    <h2 class="card-title">{{ diaryEntries[0].title }}</h2>
+    <p class="card-content">
+      {{ diaryEntries[0].content | slice:0:150 }}...
+    </p>
+    <!-- <span class="card-link">Läs mer →</span>-->
+  </div>
+
+  <div class="diary-card" *ngFor="let entry of diaryEntries.slice(1); trackBy: trackById" (click)="viewEntry(entry)">
+    <img src="https://source.unsplash.com/400x200/?scuba,diving,ocean" alt="Post image" class="card-image" />
+    <h2 class="card-title">{{ entry.title }}</h2>
+    <p class="card-content">
+      {{ entry.content | slice:0:100 }}...
+    </p>
+    <span class="card-link">Läs mer →</span>
+  </div>
+</div>

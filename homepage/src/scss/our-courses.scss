@@ -1,0 +1,42 @@
+.bg-our-courses {
+  height: auto;
+  max-width: 1280px;
+  margin: 70px;
+  background-color: $secondary;
+}
+
+ .text {
+  font-family: "Oswald", sans-serif !important;
+  font-weight: 600;
+  font-size: 1.0rem;
+  color: $turtle-brown;
+  margin-top: 3rem;
+} 
+
+.intro-text {
+  font-family: "Oswald", sans-serif !important;
+  color: $turtle-brown;
+}
+
+.card {
+  width: 18rem;
+  border-radius: 0 !important;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.spacing {
+  margin-bottom: 3rem;
+}
+
+.card-img-top {
+  border-radius: 0 !important;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+
+
+/* background-image: url('/assets/img/exploration-pictures/hometurtle-fullHD-1920x1280.jpg'); */
+

@@ -1,0 +1,25 @@
+/* Style for the overlap content */
+.overlap-content {
+    position: relative;
+    top: 15%;
+    left: 80%;
+    transform: translate(-50%, -50%, -50%);
+    background-color: rgba(255, 255, 255, 1); /* Change the opacity and color as needed */
+    padding: 20px;
+    color: black;
+    text-align: center;
+    z-index: 1; /* The overlap content should be above the image (z-index 0) */
+  }
+  
+  /* Style the text inside the overlap content */
+  .overlap-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .overlap-content p {
+    font-size: 16px;
+  }
+
+  
+ 

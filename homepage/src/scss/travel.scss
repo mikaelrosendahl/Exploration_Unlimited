@@ -1,0 +1,49 @@
+@import "variables";
+
+// "grid-template-columns" CSS property to create a flexible grid that automatically wraps
+// the elements based on the available space. The "repeat(auto-fill, minmax(200px, 1fr))" 
+//value for "grid-template-columns" ensures that the columns will automatically adjust 
+//to fill the available space, with a minimum of 200 pixels and a maximum of 1 fractional unit.
+//By combining different column classes ("col-sm-6" and "col-md-4"), the grid system
+// adapts to different screen sizes. The custom CSS classes for photo heights:
+// ("photo-sm", "photo-md", and "photo-lg") are used to display photos with various sizes.
+
+.travel {
+
+    background-color: $secondary;
+
+}
+
+.advanced-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .photo {
+    height: 200px; /* Set a fixed height for consistency */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .photo-sm {
+    height: 100px;
+  }
+  
+  .photo-md {
+    height: 300px;
+  }
+  
+  .photo-lg {
+    height: 500px;
+  }
+  
+
+/* .image-container {
+    img {
+        max-width: 100%; // Set the maximum width to 100% of the container
+        height: auto; // Allow the height to adjust automatically based on the aspect ratio
+        display: block; // Ensure the image behaves as a block element within the container
+    }
+} */

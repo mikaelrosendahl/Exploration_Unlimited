@@ -1,0 +1,102 @@
+<nav>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=5">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <div class="container p-0">
+            <div class="bg-home">
+                <div class="d-flex>">
+                    <nav class="navbar navbar-expand-lg navbar-dark">
+                        <div class="container-fluid">
+                            <button class="btn" (Click)="toogleList()" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="fa-solid fa-bars navbar-toggler" title="smallMenu"></span>
+                            </button>
+                            <div class="collapse navbar-collapse justify-content-left ps-4">
+                                <ul class="navbar-nav gap-4">
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="/" aria-label="Home">{{'MENU.HOME' |
+                                            translate}}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="/about" aria-label="About">{{'MENU.ABOUT' |
+                                            translate}}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="/blog" aria-label="Blog">{{'MENU.BLOG' |
+                                            translate}}</a>
+                                    </li>  
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="/courses" aria-label="Courses">{{'MENU.COURSES'
+                                            | translate}}</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="/contact" aria-label="Contact">{{'MENU.CONTACT'
+                                            | translate}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="d-flex justify-content-left gap-2 pe-4">
+                                <button class="btn btn-transparent" (click)="switchLanguage()" title="Select language"
+                                    aria-label="Select language">{{ currentLanguage }}
+                                    <span class="fa-solid fa-globe nav-globe"></span>
+                                </button>
+                                <!-- <a class="nav-link" routerLink="/login" aria-label="Login">{{'MENU.LOGIN' |
+                                    translate}}</a>
+                                        Visa inloggningsstatus -->
+                                <div *ngIf="isLoggedIn; else loggedOut">
+                                    <span>Välkommen, {{ username }}</span>
+                                    <a class="nav-link" routerLink="/logout" aria-label="Logout">{{'MENU.LOGOUT' |
+                                        translate}}</a>
+                                </div>
+                                <ng-template #loggedOut>
+                                    <a class="nav-link" routerLink="/login" aria-label="Login">{{'MENU.LOGIN' |
+                                        translate}}</a>
+                                    <a class="nav-link" routerLink="/create-user"
+                                        aria-label="Create User">{{'MENU.CREATE_USER' | translate}}</a>
+                                </ng-template>
+
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <div
+                        class="content-container d-flex flex-column justify-content-center align-items-center gap-3 mt-4">
+                        <div class="logo-container">
+                            <a><img src="\assets\img\logo\logo250px.png" alt="exploration logo"></a>
+                        </div>
+                        <div class="text-home pe-4">
+                            {{'HOME.TEXTROW_1' | translate }}
+                            {{'HOME.TEXTROW_2' | translate }}
+                            {{'HOME.TEXTROW_3' | translate }}
+                            {{'HOME.TEXTROW_4' | translate }}
+                        </div>
+                        <div class="mt-3">
+                            <button class="red-btn" (click)="changePage()" title="Read more"
+                                aria-label="Select language">
+                                {{'BUTTON.READ_MORE' | translate }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    </html>
+</nav>
+<app-diary-list></app-diary-list>
+<app-discover></app-discover>
+<app-our-courses></app-our-courses>
+<app-about-us></app-about-us>
+<app-contact-us></app-contact-us>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

@@ -1,0 +1,52 @@
+<div class="container p-0">
+    <div class="bg-new-contact">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info-container">
+                    <div class="info-text">
+                        <h1>{{'CONTACT.LOCATION' | translate }}</h1>
+                        <div class="paragraph-section">
+                            <p>{{'CONTACT.ADDRESS' | translate }}</p>
+                            <p>{{'CONTACT.ZIP' | translate }} {{'CONTACT.CITY' | translate }}</p>
+                            <p>{{'CONTACT.COUNTRY' | translate }}</p>
+                            <br>
+                            <br>
+                            <p><strong>{{'CONTACT.FOLLOWUS' | translate }}</strong></p>
+                            <p><i class="fab fa-facebook me-2"></i>
+                                <i class="fab fa-twitter m-2"></i>
+                                <i class="fab fa-instagram m-2"></i>
+                                <i class="fab fa-google m-2"></i>
+                            </p>
+                            <p class="privacy-policy">{{'CONTACT.PRIVACY_POLICY' | translate }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contact">
+                    <div class="d-flex">
+                        <form class="contact-us-form" (ngSubmit)="submitForm(contact)" #contact="ngForm">
+                            <h2>{{'CONTACT.CONTACT_US' | translate }}</h2>
+                            <div class="mb-3 mt-3">
+                                <input type="email" class="form-control placeholder-text" id="emailHelp"
+                                    [(ngModel)]="formData.email" name="email" placeholder="Enter a valid email address"
+                                    aria-describedby="emailHelp" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="name" class="form-control placeholder-text" id="name"
+                                    [(ngModel)]="formData.name" name="name" required placeholder="Enter your name">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control custom-textarea placeholder-text" id="message"
+                                    name="message" [(ngModel)]="formData.message" required
+                                    placeholder="Enter your message"></textarea>
+                            </div>
+                            <button type="submit" class="transparent-btn text-white">{{'BUTTON.SUBMIT' |
+                                translate}}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

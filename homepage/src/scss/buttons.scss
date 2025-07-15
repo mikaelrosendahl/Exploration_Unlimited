@@ -1,0 +1,118 @@
+button {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.red-btn {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1rem;
+    border-style: none;
+    font-weight: 700;
+    padding: 10px 22px 10px 21px;
+    background-color: $third; 
+    /* Replace with your desired background color */
+     color: #fff; 
+    /* Replace with your desired text color */
+ 
+    /* Add some border-radius to give a rounded appearance */
+} 
+
+.btn-primary {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1rem;
+    border-style: none;
+    font-weight: 700;
+    padding: 10px 22px 10px 21px;
+    background-color: #007bff; 
+    border-color: #007bff;
+    /* Replace with your desired background color */
+     color: #fff; 
+    /* Replace with your desired text color */
+  
+    /* Add some border-radius to give a rounded appearance */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+} 
+
+.transparent-btn {
+    text-transform: uppercase;
+    text-align: center;
+    border-style: none;
+    border: 2px solid #fff;
+    font-weight: 400;
+    padding: 8px 24px 8px 24px;
+    background-color: transparent; 
+     color: #fff; 
+     border-style: solid;
+     background-image: none;
+     font-size: 0.875rem;
+     letter-spacing: 4px;
+    
+}
+
+.brown-btn {
+    text-transform: uppercase;
+    text-align: center;
+    border-style: none;
+    border: 2px solid $turtle-brown;
+    font-weight: 400;
+    padding: 8px 24px 8px 24px;
+    background-color: transparent; 
+     color: $turtle-brown; 
+     border-style: solid;
+     background-image: none;
+     font-size: 0.875rem;
+     letter-spacing: 4px;
+} 
+
+.brown-btn-sm {
+    text-transform: uppercase;
+    text-align: center;
+    border-style: none;
+    border: 2px solid $turtle-brown;
+    font-weight: 500;
+    padding: 6px 18px 6px 18px;
+    background-color: transparent; 
+     color: $turtle-brown; 
+     border-style: solid;
+     background-image: none;
+     font-size: 0.584rem;
+     letter-spacing: 2px;
+}
+
+.black-btn {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1rem;
+    border-style: none;
+    font-weight: 700;
+    padding: 10px 22px 10px 21px;
+    background-color: black; 
+    /* Replace with your desired background color */
+     color: #fff; 
+    /* Replace with your desired text color */
+}
+
+.grey-btn {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1rem;
+    border-style: none;
+    font-weight: 700;
+    padding: 10px 22px 10px 21px;
+    background-color: grey; 
+    /* Replace with your desired background color */
+     color: #fff; 
+    /* Replace with your desired text color */
+   
+    /* Add some border-radius to give a rounded appearance */
+}

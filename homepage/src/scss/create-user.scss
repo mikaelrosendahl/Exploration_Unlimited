@@ -1,0 +1,82 @@
+
+@import 'variables';
+// Gemensam styling för båda formulären
+.form-common {
+  max-width: 400px !important; /* Samma maxbredd för båda formulären */
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 0!important;
+  box-shadow: 0 4px 12px #0000001a;
+}
+ 
+.form-group {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input.control,
+input.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0;
+}
+.form-group {
+  display: block;
+  margin-bottom: 1.5rem; /* Ger utrymme mellan varje form-grupp */
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem; /* Avstånd mellan etiketten och kontrollen */
+  font-weight: bold; /* Gör etiketten lite tydligare */
+  color: #555;
+}
+
+.create-user-form {
+  @extend .form-common; /* Återanvänd den gemensamma layouten */
+  background-color: rgba(235, 231, 217, 0.9); /* Behåll bakgrundsfärgen */
+  
+  p {
+    color: #777;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: center; /* Centrerar knappen horisontellt */
+  }
+
+  .brown-btn-custom{
+    text-transform: uppercase;
+    text-align: center;
+    border-style: none;
+    border: 2px solid $turtle-brown;
+    font-weight: 400;
+    padding: 8px 24px 8px 24px;
+    background-color: transparent; 
+     color: $turtle-brown; 
+     border-style: solid;
+     background-image: none;
+     font-size: 0.875rem;
+     letter-spacing: 4px;
+     margin-top: 1.5rem;
+  }
+
+  button.brown-btn-custom:hover {
+    background-color: $turtle-brown;
+    color: white;
+  }
+
+
+

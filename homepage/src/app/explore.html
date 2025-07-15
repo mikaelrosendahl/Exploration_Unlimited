@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=5">
+</head>
+
+<body>
+   <div class="container p-0">
+      <div class="bg-explore">
+         <div class="d-flex justify-content-center">
+            <div class="content-explore d-flex flex-column justify-content-end align-items-center gap-3 ps-5">
+               <h1 class="h1-explore">It´s Exploration time!</h1>
+               <div class="text-explore">
+                  {{'EXPLORE.TEXTROW_1' | translate }}
+                  {{'EXPLORE.TEXTROW_2' | translate }}
+                  {{'EXPLORE.TEXTROW_3' | translate }}
+                  {{'EXPLORE.TEXTROW_4' | translate }}
+               </div>
+               <button class="red-btn mb-5" (click)="changePage()" title="Read more" aria-label="Select language">
+                  {{'BUTTON.READ_MORE' | translate }}
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>

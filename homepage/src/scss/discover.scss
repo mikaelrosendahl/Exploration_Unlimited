@@ -1,0 +1,60 @@
+@import 'variables';
+@import 'overlap';
+
+.bg-learn {
+  height: auto;
+  max-width: 1280px;
+  margin: 70px; 
+  background-color: $secondary;
+
+
+.photo-learn {
+  margin-top: 24px;
+  margin-bottom: 20px;
+  height: 300px;
+  background-image: url('/assets/img/exploration-pictures/pool-group.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.photo-mini {
+  height: 200px;
+  width: 50%;
+  margin-top: 24px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  background-image: url('/assets/img/exploration-pictures/scubalady.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.photo-md-left {
+  height: 300px;
+  background-image: url('/assets/img/exploration-pictures/tanks.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.photo-md-right {
+  height: 245px;
+  background-image: url('/assets/img/exploration-pictures/dsd.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.text-learn {
+  font: 1em sans-serif;
+  color: $turtle-brown;
+  height: auto;
+  margin: 20px;
+  text-align: center;
+  background: transparent;
+  line-height: 1.4;
+}
+}
