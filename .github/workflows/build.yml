@@ -1,0 +1,46 @@
+name: Build Project
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install and build frontend (homepage)
+        working-directory: homepage
+        run: |
+          npm ci
+          npm run build
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore backend dependencies
+        working-directory: ExplorationApi
+        run: dotnet restore
+
+      - name: Build backend
+        working-directory: ExplorationApi
+        run: dotnet build --no-restore --configuration Release
+
+      - name: Run backend tests (optional)
+        working-directory: ExplorationApi
+        run: dotnet test --no-build --configuration Release
