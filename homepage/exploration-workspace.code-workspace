@@ -1,0 +1,28 @@
+{
+    "folders": [
+        {
+            "name": "Frontend (Homepage)",
+            "path": "."
+        },
+        {
+            "name": "Backend (API)",
+            "path": "../ExplorationApi"
+        }
+    ],
+    "settings": {
+        "copilot.enable": {
+            "*": true,
+            "plaintext": true,
+            "markdown": true,
+            "scminput": false
+        }
+    },
+    "extensions": {
+        "recommendations": [
+            "github.copilot",
+            "github.copilot-chat",
+            "ms-dotnettools.csharp",
+            "angular.ng-template"
+        ]
+    }
+}
