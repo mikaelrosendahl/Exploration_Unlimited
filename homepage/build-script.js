@@ -12,7 +12,8 @@ const aspnetEnv = process.env.ASPNETCORE_ENVIRONMENT || '';
 const renderServiceName = process.env.RENDER_SERVICE_NAME || '';
 
 // Kombinera alla miljövariablerna för bästa detection
-const environment = nodeEnv || aspnetEnv || 'staging';
+// Prioritera ASPNETCORE_ENVIRONMENT först eftersom det är vad du använder
+const environment = aspnetEnv || nodeEnv || 'staging';
 const isRenderProduction = renderServiceName.includes('prod') || renderServiceName.includes('production');
 
 let buildConfig;
