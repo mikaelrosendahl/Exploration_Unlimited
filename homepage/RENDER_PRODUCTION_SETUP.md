@@ -2,16 +2,21 @@
 
 ## 🚀 Production Environment Configuration för Render
 
-### Problem identifierat:
-Render försöker köra `npm run build --configuration production` vilket är felaktigt Angular CLI syntax.
+### Problem löst:
+✅ Smart build-script som automatiskt väljer rätt Angular-konfiguration baserat på NODE_ENV
+✅ Fungerar med både Render's befintliga build command och våra egna scripts
 
 ### Korrekt Render-konfiguration:
 
 #### **Production Service på Render:**
 
-**Build Command:**
+**Build Command:** (Välj ett av dessa)
 ```
-npm install && npm run build:prod
+npm install && npm run build
+```
+ELLER den gamla varianten (fungerar nu också):
+```
+npm install; npm run build --configuration production
 ```
 
 **Start Command:**
@@ -21,49 +26,72 @@ NODE_ENV=production npm start
 
 **Environment Variables:**
 - `NODE_ENV=production`
-- `PORT=10000` (optional, Render sätter detta automatiskt)
 
-### Build Commands förklaring:
+#### **Staging Service på Render:**
 
-- ✅ **Korrekt**: `npm run build:prod` (använder vårt script från package.json)
-- ❌ **Felaktigt**: `npm run build --configuration production` (Angular CLI syntax, inte npm script)
+**Build Command:**
+```
+npm install && npm run build
+```
 
-### Alternativa build commands som fungerar:
+**Start Command:**
+```
+NODE_ENV=staging npm start
+```
 
-1. **Rekommenderad**: `npm install && npm run build:prod`
-2. **Alternativ**: `npm ci && npm run build:prod` (snabbare i production)
-3. **Med explicit config**: `npm install && npx ng build --configuration production`
+**Environment Variables:**
+- `NODE_ENV=staging`
 
-### Steg för att uppdatera Render Production Service:
+### Hur det fungerar:
 
-1. **Gå till Render Dashboard**
-2. **Välj din Production Service**
-3. **Gå till Settings**
-4. **Uppdatera "Build Command" till**: `npm install && npm run build:prod`
-5. **Uppdatera "Start Command" till**: `NODE_ENV=production npm start`
-6. **Sätt Environment Variable**: `NODE_ENV=production`
-7. **Klicka "Save Changes"**
-8. **Klicka "Manual Deploy" → "Deploy latest commit"**
+**Smart Build Script** (`build-script.js`):
+- Läser `NODE_ENV` miljövariabel
+- Väljer automatiskt rätt Angular-konfiguration:
+  - `NODE_ENV=production` → `ng build --configuration production`
+  - `NODE_ENV=staging` → `ng build --configuration staging`
+  - Default fallback → `ng build --configuration staging`
 
-### Verification:
+### Build Commands som nu fungerar:
 
-Efter deployment borde du se i browser console:
+1. ✅ `npm run build` (använder smart script + NODE_ENV)
+2. ✅ `npm run build:prod` (direkt production build)
+3. ✅ `npm run build:staging` (direkt staging build)
+4. ✅ `npm run build --configuration production` (ignorerar extra argument, använder NODE_ENV)
+
+### Verification efter deployment:
+
+**Production** (`https://explorationunlimited.se`):
 ```
 === ENVIRONMENT CHECK ===
 Production mode: true
 API URL: https://explorationapi.onrender.com/api
+Environment: {production: true, staging: false, ...}
 ```
 
-### Troubleshooting:
+**Staging** (`https://homepage-fnpo.onrender.com`):
+```
+=== ENVIRONMENT CHECK ===
+Production mode: true
+API URL: https://explorationapi-st.onrender.com/api  
+Environment: {production: true, staging: true, ...}
+```
 
-Om bygget fortfarande misslyckas:
-1. Kontrollera att Node.js version är kompatibel (>=16)
-2. Försök med `npm ci` istället för `npm install`
-3. Kontrollera att alla dependencies finns i package.json
+### Steg för att uppdatera Render Services:
 
-### Production vs Staging Differences:
+1. **Pusha de nya filerna** (build-script.js och uppdaterad package.json)
+2. **För Production Service**:
+   - Build Command: `npm install && npm run build`
+   - Start Command: `NODE_ENV=production npm start`
+   - Environment Variables: `NODE_ENV=production`
+3. **För Staging Service**:
+   - Build Command: `npm install && npm run build`
+   - Start Command: `NODE_ENV=staging npm start`  
+   - Environment Variables: `NODE_ENV=staging`
+4. **Deploy båda services**
 
-| Environment | Build Command | API URL | Node Environment |
-|-------------|---------------|---------|------------------|
-| **Staging** | `npm run build` (default=staging) | `explorationapi-st.onrender.com` | `NODE_ENV=staging` |
-| **Production** | `npm run build:prod` | `explorationapi.onrender.com` | `NODE_ENV=production` |
+### Varför denna lösning är bättre:
+
+- ✅ **Flexibel**: Fungerar med både gamla och nya build commands
+- ✅ **Tydlig**: Visar exakt vilken konfiguration som används
+- ✅ **Robust**: Fallback till staging om NODE_ENV inte är satt
+- ✅ **Debug-vänlig**: Loggar alla steg i build-processen
