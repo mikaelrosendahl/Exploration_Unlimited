@@ -1,7 +1,7 @@
 export const environment = {
-  production: false,
+  production: true,
   staging: true,
   apiUrl: 'https://explorationapi-st.onrender.com/api',
-  enableDebugMode: true,
-  logLevel: 'debug'
+  enableDebugMode: false,
+  logLevel: 'info'
 };
