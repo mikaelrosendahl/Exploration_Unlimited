@@ -7,21 +7,25 @@
 const { execSync } = require('child_process');
 
 // Bestäm konfiguration baserat på flera faktorer
-const environment = process.env.NODE_ENV || 'staging';
+const nodeEnv = process.env.NODE_ENV || '';
+const aspnetEnv = process.env.ASPNETCORE_ENVIRONMENT || '';
 const renderServiceName = process.env.RENDER_SERVICE_NAME || '';
+
+// Kombinera alla miljövariablerna för bästa detection
+const environment = nodeEnv || aspnetEnv || 'staging';
 const isRenderProduction = renderServiceName.includes('prod') || renderServiceName.includes('production');
 
 let buildConfig;
 
-// Prioritera NODE_ENV först, men fallback på service name detection
-if (environment === 'production' || isRenderProduction) {
+// Prioritera både NODE_ENV och ASPNETCORE_ENVIRONMENT
+if (environment.toLowerCase() === 'production' || isRenderProduction) {
   buildConfig = 'production';
-} else if (environment === 'staging') {
+} else if (environment.toLowerCase() === 'staging') {
   buildConfig = 'staging';
-} else if (environment === 'development') {
+} else if (environment.toLowerCase() === 'development') {
   buildConfig = 'development';
 } else {
-  // Smart fallback: om inget NODE_ENV är satt, gissa baserat på service name
+  // Smart fallback: om inget är satt, gissa baserat på service name
   if (renderServiceName.includes('prod') || renderServiceName.includes('production')) {
     buildConfig = 'production';
   } else {
@@ -32,8 +36,10 @@ if (environment === 'production' || isRenderProduction) {
 const buildCommand = `ng build --configuration ${buildConfig}`;
 
 console.log(`🔧 Environment Detection:`);
-console.log(`   NODE_ENV: ${environment}`);
+console.log(`   NODE_ENV: ${nodeEnv}`);
+console.log(`   ASPNETCORE_ENVIRONMENT: ${aspnetEnv}`);
 console.log(`   RENDER_SERVICE_NAME: ${renderServiceName}`);
+console.log(`   Combined environment: ${environment}`);
 console.log(`   Detected production: ${isRenderProduction}`);
 console.log(`📦 Selected Angular configuration: ${buildConfig}`);
 console.log(`⚡ Running: ${buildCommand}`);

@@ -8,20 +8,29 @@
 
 ### **VIKTIGT: Production Environment Variables**
 
+⚠️ **PROBLEM IDENTIFIERAT: Production pekar på staging API!**
+
 **Du måste sätta dessa Environment Variables på din Production Render Service:**
 
-1. **NODE_ENV=production** (kritiskt för att välja rätt Angular config)
-2. **PORT=10000** (optional, Render sätter detta automatiskt)
+1. **ASPNETCORE_ENVIRONMENT=Production** (kritiskt för att välja rätt Angular config)
+2. **NODE_ENV=production** (optional, extra säkerhet)
+3. **PORT=10000** (optional, Render sätter detta automatiskt)
 
-### Hur man sätter Environment Variables på Render:
+### 🚨 AKUT FIX - Sätt ASPNETCORE_ENVIRONMENT=Production:
 
-1. **Gå till Render Dashboard**
-2. **Välj din Production Service** (som deploys till `https://explorationunlimited.se`)
+1. **Gå till Render Dashboard** → https://dashboard.render.com
+2. **Välj din Production Service** (`explorationunlimited.se`)
 3. **Gå till "Environment" tab**
-4. **Lägg till**:
-   - Key: `NODE_ENV`, Value: `production`
+4. **Lägg till Environment Variable**:
+   - Key: `ASPNETCORE_ENVIRONMENT`
+   - Value: `Production`
 5. **Klicka "Save Changes"**
-6. **Deploy om** för att använda nya variables
+6. **Deploy om manuellt** för att använda nya variables
+
+### Varför detta är viktigt:
+- Utan ASPNETCORE_ENVIRONMENT=Production använder build-scriptet staging-config
+- Detta ger fel API URL: `explorationapi-st.onrender.com` istället för `explorationapi.onrender.com`
+- CORS-fel uppstår eftersom staging API inte har production domain tillåten
 
 ### **Production Service på Render:**
 
@@ -36,11 +45,11 @@ npm install; npm run build --configuration production
 
 **Start Command:**
 ```
-NODE_ENV=production npm start
+ASPNETCORE_ENVIRONMENT=Production npm start
 ```
 
 **Environment Variables:**
-- `NODE_ENV=production`
+- `ASPNETCORE_ENVIRONMENT=Production`
 
 #### **Staging Service på Render:**
 
@@ -60,10 +69,11 @@ NODE_ENV=staging npm start
 ### Hur det fungerar:
 
 **Smart Build Script** (`build-script.js`):
-- Läser `NODE_ENV` miljövariabel
+- Läser `ASPNETCORE_ENVIRONMENT` och `NODE_ENV` miljövariablerna
 - Väljer automatiskt rätt Angular-konfiguration:
+  - `ASPNETCORE_ENVIRONMENT=Production` → `ng build --configuration production`
+  - `ASPNETCORE_ENVIRONMENT=Staging` → `ng build --configuration staging`
   - `NODE_ENV=production` → `ng build --configuration production`
-  - `NODE_ENV=staging` → `ng build --configuration staging`
   - Default fallback → `ng build --configuration staging`
 
 ### Build Commands som nu fungerar:
@@ -96,12 +106,12 @@ Environment: {production: true, staging: true, ...}
 1. **Pusha de nya filerna** (build-script.js och uppdaterad package.json)
 2. **För Production Service**:
    - Build Command: `npm install && npm run build`
-   - Start Command: `NODE_ENV=production npm start`
-   - Environment Variables: `NODE_ENV=production`
+   - Start Command: `ASPNETCORE_ENVIRONMENT=Production npm start`
+   - Environment Variables: `ASPNETCORE_ENVIRONMENT=Production`
 3. **För Staging Service**:
    - Build Command: `npm install && npm run build`
-   - Start Command: `NODE_ENV=staging npm start`  
-   - Environment Variables: `NODE_ENV=staging`
+   - Start Command: `ASPNETCORE_ENVIRONMENT=Staging npm start`  
+   - Environment Variables: `ASPNETCORE_ENVIRONMENT=Staging`
 4. **Deploy båda services**
 
 ### Varför denna lösning är bättre:
