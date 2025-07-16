@@ -6,9 +6,24 @@
 ✅ Smart build-script som automatiskt väljer rätt Angular-konfiguration baserat på NODE_ENV
 ✅ Fungerar med både Render's befintliga build command och våra egna scripts
 
-### Korrekt Render-konfiguration:
+### **VIKTIGT: Production Environment Variables**
 
-#### **Production Service på Render:**
+**Du måste sätta dessa Environment Variables på din Production Render Service:**
+
+1. **NODE_ENV=production** (kritiskt för att välja rätt Angular config)
+2. **PORT=10000** (optional, Render sätter detta automatiskt)
+
+### Hur man sätter Environment Variables på Render:
+
+1. **Gå till Render Dashboard**
+2. **Välj din Production Service** (som deploys till `https://explorationunlimited.se`)
+3. **Gå till "Environment" tab**
+4. **Lägg till**:
+   - Key: `NODE_ENV`, Value: `production`
+5. **Klicka "Save Changes"**
+6. **Deploy om** för att använda nya variables
+
+### **Production Service på Render:**
 
 **Build Command:** (Välj ett av dessa)
 ```
