@@ -79,19 +79,20 @@
               ]
             },
             "staging": {
+              "outputPath": "dist/homepage",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.st.ts"
                 }
               ],
-              "optimization": false,
-              "outputHashing": "none",
-              "sourceMap": true,
-              "namedChunks": true,
-              "aot": false,
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
               "vendorChunk": true,
-              "buildOptimizer": false
+              "buildOptimizer": true
             }
           },
           "defaultConfiguration": "local"

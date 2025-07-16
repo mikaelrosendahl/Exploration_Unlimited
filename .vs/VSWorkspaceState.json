@@ -3,8 +3,7 @@
     "",
     "\\.github",
     "\\.github\\workflows",
-    "\\ExplorationApi",
-    "\\ExplorationApi\\Controllers",
+    "\\homepage",
     "\\homepage\\.angular",
     "\\homepage\\assets",
     "\\homepage\\bin",
@@ -12,6 +11,6 @@
     "\\homepage\\obj",
     "\\homepage\\src"
   ],
-  "SelectedNode": "\\.github\\workflows\\deploy-prod.yml",
+  "SelectedNode": "\\.github\\workflows\\build.yml",
   "PreviewInSolutionExplorer": false
 }

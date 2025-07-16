@@ -51,7 +51,7 @@ jobs:
 
       - name: Build frontend
         working-directory: homepage
-        run: npm run build
+        run: npm run build:staging
 
       - name: Run frontend tests (optional)
         working-directory: homepage
