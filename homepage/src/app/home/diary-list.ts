@@ -17,12 +17,12 @@ export class DiaryListComponent implements OnInit {
     this.loadDiaryEntries();
   }
 
-  // Hämta alla inlägg från DiaryService, sortera efter created_at (senaste först)
+  // Hämta alla inlägg från DiaryService, sortera efter date (senaste först)
   loadDiaryEntries() {
     this.diaryService.getAllEntries().subscribe(
       (data: any[]) => {
         this.diaryEntries = data.sort((a, b) => {
-          return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
         });
       },
       error => {
