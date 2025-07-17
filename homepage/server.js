@@ -4,18 +4,7 @@ const app = express();
 
 // Bestäm vilken build-mapp som ska användas baserat på miljövariabel
 const environment = process.env.NODE_ENV || 'development';
-let appName;
-
-switch(environment) {
-  case 'production':
-    appName = 'homepage'; // för produktion
-    break;
-  case 'staging':
-    appName = 'homepage'; // för staging
-    break;
-  default:
-    appName = 'homepage-dev'; // för development och fallback
-}
+let appName = 'homepage'; // Alla miljöer använder samma output-mapp
 
 const distFolder = path.join(__dirname, `dist/${appName}`);
 const port = process.env.PORT || 10000;
