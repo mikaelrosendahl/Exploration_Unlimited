@@ -4,11 +4,51 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
     steps:
-      - name: Deploy Development API
-        run: curl https://api.render.com/deploy/srv-d1951hbuibrs73bqubbg?key=-iyywq1G7uA
-      
-      - name: Deploy Development Client
-        run: curl https://api.render.com/deploy/srv-d19blunfte5s73c8i7ig?key=3vVrNmrS2c0
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          path: .
+
+      # Backend (.NET) setup och build
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore backend dependencies
+        working-directory: ExplorationApi
+        run: dotnet restore
+
+      - name: Build backend
+        working-directory: ExplorationApi
+        run: dotnet build --no-restore --configuration Release
+
+      # Frontend (Angular) setup och build
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: 'homepage/package-lock.json'
+
+      - name: Install frontend dependencies
+        working-directory: homepage
+        run: npm ci
+
+      - name: Build frontend for development
+        working-directory: homepage
+        run: npm run build -- --configuration=development
+
+      - name: Commit and push built files
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add homepage/dist/
+          git commit -m "Build frontend for development deployment" || exit 0
+          git push
