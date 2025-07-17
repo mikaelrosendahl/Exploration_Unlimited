@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -20,7 +21,7 @@ export class ContactComponent {
   
   }; 
 
-   private apiUrl = 'https://localhost:7101/api/home/contact';
+   private apiUrl = `${environment.apiUrl}/home/contact`;
 
     constructor(private http: HttpClient) { }
 

@@ -61,10 +61,9 @@ if (!string.IsNullOrEmpty(port))
 
 var app = builder.Build();
 
-app.UseRouting();
-
-
 app.UseCors("AllowFrontendDev");
+
+app.UseRouting();
 
 app.UseAuthorization();
 
