@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "ng build --configuration production",
+    "build": "ng build",
     "build:staging": "ng build --configuration staging",
     "build:prod": "ng build --configuration production",
     "build:production": "ng build --configuration production",
