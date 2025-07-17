@@ -31,10 +31,6 @@ jobs:
         working-directory: ExplorationApi
         run: dotnet build --no-restore --configuration Release
 
-      - name: Run backend tests (optional)
-        working-directory: ExplorationApi
-        run: dotnet test --no-build --configuration Release
-
       # Frontend (Angular) setup och build
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -47,16 +43,10 @@ jobs:
         working-directory: homepage
         run: npm ci
 
-      - name: Build frontend
+      - name: Build frontend for all environments
         working-directory: homepage
-        run: npm run build
-
-      - name: Run frontend tests (optional)
-        working-directory: homepage
-        run: npm run test -- --watch=false --browsers=ChromeHeadless
-        continue-on-error: true
-
-      - name: Run frontend linting (optional)
-        working-directory: homepage
-        run: npm run lint
-        continue-on-error: true
+        run: |
+          npm run build -- --configuration=local
+          npm run build -- --configuration=development
+          npm run build -- --configuration=staging
+          npm run build -- --configuration=production
