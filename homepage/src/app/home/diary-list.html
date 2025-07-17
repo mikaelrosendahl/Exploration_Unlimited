@@ -7,7 +7,6 @@
     <p class="card-content">
       {{ diaryEntries[0].content | slice:0:150 }}...
     </p>
-    <!-- <span class="card-link">Läs mer →</span>-->
   </div>
 
   <div class="diary-card" *ngFor="let entry of diaryEntries.slice(1); trackBy: trackById" (click)="viewEntry(entry)">
@@ -16,6 +15,5 @@
     <p class="card-content">
       {{ entry.content | slice:0:100 }}...
     </p>
-    <span class="card-link">Läs mer →</span>
   </div>
 </div>
