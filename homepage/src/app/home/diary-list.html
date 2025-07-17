@@ -11,7 +11,7 @@
   </div>
 
   <div class="diary-card" *ngFor="let entry of diaryEntries.slice(1); trackBy: trackById" (click)="viewEntry(entry)">
-    <img src="https://source.unsplash.com/400x200/?scuba,diving,ocean" alt="Post image" class="card-image" />
+    <div class="card-image"></div>
     <h2 class="card-title">{{ entry.title }}</h2>
     <p class="card-content">
       {{ entry.content | slice:0:100 }}...
