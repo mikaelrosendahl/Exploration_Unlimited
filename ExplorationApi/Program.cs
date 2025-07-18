@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ExplorationApi.Data;
+using Microsoft.Extensions.FileProviders;
 
 
 
@@ -60,6 +61,16 @@ if (!string.IsNullOrEmpty(port))
 }
 
 var app = builder.Build();
+
+var staticPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "test_images");
+Console.WriteLine($"Static files path: {staticPath}");
+Console.WriteLine($"Directory exists: {Directory.Exists(staticPath)}");
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(staticPath),
+    RequestPath = "/test_images"
+});
 
 app.UseCors("AllowFrontendDev");
 

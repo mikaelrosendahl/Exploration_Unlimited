@@ -1,29 +1,29 @@
-import { Component, OnInit } from '@angular/core';  
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DiaryService } from '../services/diary.service'; 
+import { DiaryService } from '../services/diary.service';
 
 @Component({
   selector: 'app-diary-list',
   templateUrl: './diary-list.html',
 })
-export class DiaryListComponent implements OnInit { 
+export class DiaryListComponent implements OnInit {
 
   diaryEntries: any[] = [];
 
-  constructor(private diaryService: DiaryService, private router: Router) {}
+  constructor(private diaryService: DiaryService, private router: Router) { }
 
   // Hämta alla inlägg från API:et vid sidladdning
   ngOnInit() {
     this.loadDiaryEntries();
   }
 
-  // Hämta alla inlägg från DiaryService, sortera efter date (senaste först)
   loadDiaryEntries() {
+    console.log('Hämtar dagboksinlägg...');
     this.diaryService.getAllEntries().subscribe(
       (data: any[]) => {
-        this.diaryEntries = data.sort((a, b) => {
-          return new Date(b.date).getTime() - new Date(a.date).getTime();
-        });
+        // Sortera så att högst ID kommer först
+        this.diaryEntries = data.sort((a, b) => b.id - a.id);
+        console.log('Sorterade inlägg:', this.diaryEntries);
       },
       error => {
         console.error('Fel vid hämtning av data:', error);
@@ -34,7 +34,6 @@ export class DiaryListComponent implements OnInit {
   trackById(index: number, entry: any): number {
     return entry.id;
   }
-
   // Metod för att navigera till specifikt inlägg
   viewEntry(entry: { id: number, title: string, content: string }) {
     if (!entry || !entry.id) {
